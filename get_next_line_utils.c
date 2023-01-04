@@ -6,15 +6,16 @@
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 09:34:07 by remanuel          #+#    #+#             */
-/*   Updated: 2023/01/04 11:17:16 by remanuel         ###   ########.fr       */
+/*   Updated: 2023/01/04 15:13:47 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 /*
-	Retorna a quantidade de caracteres ate encontrar caracter nulo
-	ou um newline. index++ no fim para adicionar o valor do newline ao return
+	This function iterates on a string until it finds the terminating NULL character.
+	If it finds a newline character the position of the index is increased by 1(one) to account for it.
+	The return value is the amount of characters found in the string.
 */
 size_t	n_strlen(char *str)
 {
@@ -55,8 +56,10 @@ char	*n_strjoin(char *return_line, char *buffer)
 	new_line[index] = '\0';
 	return (new_line);
 }
-
-int	n_cleaner(char *buffer)
+/*
+	This function 
+*/
+int	n_remover(char *buffer)
 {
 	int	line_check;
 	int	index;
@@ -67,7 +70,7 @@ int	n_cleaner(char *buffer)
 	index_2 = 0;
 	while (buffer[index] != '\0')
 	{
-		if (line_check)
+		if (line_check != 0)
 			buffer[index_2++] = buffer[index];			
 		if (buffer[index] == '\n')
 			line_check = 1;
