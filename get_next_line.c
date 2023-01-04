@@ -6,7 +6,7 @@
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 09:34:12 by remanuel          #+#    #+#             */
-/*   Updated: 2022/12/22 17:07:45 by remanuel         ###   ########.fr       */
+/*   Updated: 2023/01/04 10:22:28 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*get_next_line(int fd)
 	index = 0;
 	if (BUFFER_SIZE < 1 || read(fd, 0 ,0) < 0)
 	{
-		while(buffer[index])
+		while(buffer[index] != '\0')
 			buffer[index++] = 0;
 		return (NULL);
 	}
@@ -33,12 +33,13 @@ char	*get_next_line(int fd)
 	while (buffer[0] || read(fd, buffer, BUFFER_SIZE) > 0)
 	{
 		return_line = n_strjoin(return_line, buffer);
-			if (n_cleaner(buffer))
+			if (n_cleaner(buffer) == 1)
 				break ;
 	}
 	return (return_line);
 }
 
+/*
  int main()
 {
 	int fd = 0;
@@ -51,6 +52,8 @@ char	*get_next_line(int fd)
 			break ;
 		printf("%s", line);
 	}
+	printf("\n%d", fd);
 	free(line);
 	close(fd);
 }
+*/

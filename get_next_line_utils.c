@@ -6,7 +6,7 @@
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 09:34:07 by remanuel          #+#    #+#             */
-/*   Updated: 2022/12/22 17:07:08 by remanuel         ###   ########.fr       */
+/*   Updated: 2023/01/04 11:17:16 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 	Retorna a quantidade de caracteres ate encontrar caracter nulo
-	ou um newline. Index++ no fim para adicionar o valor do newline ao return
+	ou um newline. index++ no fim para adicionar o valor do newline ao return
 */
 size_t	n_strlen(char *str)
 {
@@ -23,7 +23,7 @@ size_t	n_strlen(char *str)
 	index = 0;
 	if (!str)
 		return (0);
-	while (str[index] && str[index] != '\n')
+	while (str[index] != '\0' && str[index] != '\n')
 		index++;
 	if (str[index] == '\n')
 		index++;
@@ -31,22 +31,22 @@ size_t	n_strlen(char *str)
 }
 
 
-char	*n_strjoin(char *read_line, char *buffer)
+char	*n_strjoin(char *return_line, char *buffer)
 {
 	size_t	index;
 	char	*new_line;
 	
 	index = 0;
-	new_line = malloc(n_strlen(read_line) + n_strlen(buffer) + 1);
+	new_line = malloc(n_strlen(return_line) + n_strlen(buffer) + 1);
 	if (!new_line)
 		return (NULL);
-	while (read_line && read_line[index])
+	while (return_line != NULL && return_line[index] != '\0')
 	{
-		new_line[index] = read_line[index];
+		new_line[index] = return_line[index];
 		index++;
 	}
-	free(read_line);
-	while (*buffer)
+	free(return_line);
+	while (*buffer != '\0')
 		{
 		new_line[index++] = *buffer;
 			if (*buffer++ == '\n')
@@ -65,7 +65,7 @@ int	n_cleaner(char *buffer)
 	line_check = 0;
 	index = 0;
 	index_2 = 0;
-	while (buffer[index])
+	while (buffer[index] != '\0')
 	{
 		if (line_check)
 			buffer[index_2++] = buffer[index];			
