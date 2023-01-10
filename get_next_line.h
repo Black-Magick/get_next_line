@@ -6,7 +6,7 @@
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 09:34:15 by remanuel          #+#    #+#             */
-/*   Updated: 2023/01/04 15:14:21 by remanuel         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:50:56 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <unistd.h>
 
 #ifndef		BUFFER_SIZE
-# define	BUFFER_SIZE 50
+# define	BUFFER_SIZE 500
 #endif
 
 size_t	n_strlen(char *str);

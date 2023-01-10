@@ -6,7 +6,7 @@
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 09:34:12 by remanuel          #+#    #+#             */
-/*   Updated: 2023/01/04 15:58:18 by remanuel         ###   ########.fr       */
+/*   Updated: 2023/01/10 21:29:46 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ char	*get_next_line(int fd)
 	return_line = NULL;
 	while (buffer[0] || read(fd, buffer, BUFFER_SIZE) > 0)
 	{
+		//printf("Buffer:%s", buffer); Check it
 		return_line = n_strjoin(return_line, buffer);
+		//printf("\nReturn Line:%s ", return_line); Check it
 			if (n_remover(buffer) != 0)
 				break ;
 	}
@@ -40,20 +42,27 @@ char	*get_next_line(int fd)
 }
 
 /*
- int main()
+int main()
 {
 	int fd = 0;
-	char *line;
+	//char *line;
 	fd = open("./fd.txt", O_RDONLY);
-	while (1)
-	{
-		line = get_next_line(fd);
-		if (line == NULL)
-			break ;
-		printf("%s", line);
-	}
-	printf("\n%d", fd);
-	free(line);
+	//while (1)
+	//{
+		//line = get_next_line(fd);
+		//if (line == NULL)
+		//	break ;
+		//printf("%s", get_next_line(fd));
+		printf("FD Line:%s", get_next_line(fd));
+		printf("FD Line:%s", get_next_line(fd));
+		//if (get_next_line(fd) == NULL)
+		//	break ;
+		//line = get_next_line(fd);
+		//printf("%s", line);
+	//}
+	//printf("\n%d", fd);
+	//free(line);
 	close(fd);
+	return (0);
 }
 */

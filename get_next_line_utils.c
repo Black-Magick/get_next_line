@@ -6,7 +6,7 @@
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 09:34:07 by remanuel          #+#    #+#             */
-/*   Updated: 2023/01/04 15:13:47 by remanuel         ###   ########.fr       */
+/*   Updated: 2023/01/10 21:30:52 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 /*
 	This function iterates on a string until it finds the terminating NULL character.
 	If it finds a newline character the position of the index is increased by 1(one) to account for it.
-	The return value is the amount of characters found in the string.
+	The return value is the amount of characters found in the string, either up until
+	and including the newline character (if it finds one), or, until the terminating NULL character.
 */
 size_t	n_strlen(char *str)
 {
@@ -70,9 +71,9 @@ int	n_remover(char *buffer)
 	index_2 = 0;
 	while (buffer[index] != '\0')
 	{
-		if (line_check != 0)
-			buffer[index_2++] = buffer[index];			
-		if (buffer[index] == '\n')
+		if (line_check != 0)//Trocar para ver se faz diff
+			buffer[index_2++] = buffer[index];
+		if (buffer[index] == '\n')//Trocar para ver se faz diff
 			line_check = 1;
 		buffer[index++] = '\0';
 	}
