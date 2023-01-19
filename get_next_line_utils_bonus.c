@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 09:34:07 by remanuel          #+#    #+#             */
-/*   Updated: 2023/01/19 12:54:14 by remanuel         ###   ########.fr       */
+/*   Created: 2023/01/19 13:03:13 by remanuel          #+#    #+#             */
+/*   Updated: 2023/01/19 13:18:16 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 /*
 	Iterates on a string until it finds the NULL character or a newline character
