@@ -6,7 +6,7 @@
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 09:34:07 by remanuel          #+#    #+#             */
-/*   Updated: 2023/01/10 21:30:52 by remanuel         ###   ########.fr       */
+/*   Updated: 2023/01/11 11:12:13 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ int	n_remover(char *buffer)
 	index_2 = 0;
 	while (buffer[index] != '\0')
 	{
-		if (line_check != 0)//Trocar para ver se faz diff
+		if (line_check != 0)
 			buffer[index_2++] = buffer[index];
-		if (buffer[index] == '\n')//Trocar para ver se faz diff
+		if (buffer[index] == '\n')
 			line_check = 1;
 		buffer[index++] = '\0';
 	}
