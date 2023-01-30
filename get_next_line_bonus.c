@@ -6,7 +6,7 @@
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:02:50 by remanuel          #+#    #+#             */
-/*   Updated: 2023/01/19 13:28:51 by remanuel         ###   ########.fr       */
+/*   Updated: 2023/01/30 12:40:29 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[FOPEN_MAX][BUFFER_SIZE];
+	static char	buffer[FOPEN_MAX][BUFFER_SIZE + 1];
 	char		*return_line;
 	int			index;
 
 	index = 0;
 	if (BUFFER_SIZE < 1 || read(fd, 0, 0) < 0 || fd > FOPEN_MAX)
 	{
-		while (fd > 0 && fd < FOPEN_MAX && buffer[index])
+		while (fd > 0 && fd <= FOPEN_MAX && buffer[fd][index] != '\0')
 			buffer[fd][index++] = 0;
 		return (NULL);
 	}

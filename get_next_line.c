@@ -6,7 +6,7 @@
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 09:34:12 by remanuel          #+#    #+#             */
-/*   Updated: 2023/01/30 11:31:18 by remanuel         ###   ########.fr       */
+/*   Updated: 2023/01/30 12:42:12 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ char	*get_next_line(int fd)
 	while (buffer[0] != '\0' || read(fd, buffer, BUFFER_SIZE) > 0)
 	{
 		return_line = n_strjoin(return_line, buffer);
-			if (n_remover(buffer) != 0)
-				break ;
+		if (n_remover(buffer) != 0)
+			break ;
 	}
 	return (return_line);
 }
