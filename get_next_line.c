@@ -6,7 +6,7 @@
 /*   By: remanuel <remanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 09:34:12 by remanuel          #+#    #+#             */
-/*   Updated: 2023/01/30 12:42:12 by remanuel         ###   ########.fr       */
+/*   Updated: 2023/02/13 10:04:59 by remanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 */
 char	*get_next_line(int fd)
 {
-	static char	buffer[BUFFER_SIZE];
+	static char	buffer[BUFFER_SIZE + 1];
 	char		*return_line;
 	int			index;
 
@@ -36,6 +36,7 @@ char	*get_next_line(int fd)
 		if (n_remover(buffer) != 0)
 			break ;
 	}
+	buffer[BUFFER_SIZE] = '\0';
 	return (return_line);
 }
 
@@ -47,40 +48,9 @@ int main()
 	int fd = 0;
 	char *line;
 	fd = open("./fd.txt", O_RDONLY);
-	//while (1)
-	//{
-		//line = get_next_line(fd);
-		//if (line == NULL)
-		//	break ;
-		//printf("%s", get_next_line(fd));
-		printf("FD Line:%s", get_next_line(fd));
-		printf("FD Line:%s", get_next_line(fd));
-		//printf("FD Line:%s", get_next_line(fd));
-		//printf("FD Line:%s", get_next_line(fd));
-		//printf("FD Line:%s", get_next_line(fd));
-		//printf("FD Line:%s", get_next_line(fd));
-		//if (get_next_line(fd) == NULL)
-		//	break ;
-	//{
-		//line = get_next_line(fd);
-		//if (line == NULL)
-		//	break ;
-		//printf("%s", get_next_line(fd));
-		printf("FD Line:%s", get_next_line(fd));
-		printf("FD Line:%s", get_next_line(fd));
-		//printf("FD Line:%s", get_next_line(fd));
-		//printf("FD Line:%s", get_next_line(fd));
-		//printf("FD Line:%s", get_next_line(fd));
-		//printf("FD Line:%s", get_next_line(fd));
-		//if (get_next_line(fd) == NULL)
-		//	break ;
-		//line = get_next_line(fd);
-		printf("GNL:%s", line);
-		line = get_next_line(fd);
-		printf("GNL:%s", line);
-	//}
-	//printf("\n%d", fd);
-	//free(line);
-	//close(fd);
+	line = get_next_line(fd);
+	printf("GNL:%s", line);
+	free(line);
+	close(fd);
 	return (0);
 }*/
